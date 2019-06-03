@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>CSS Website Layout</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: Arial;
+  padding: 5px;
+  background: #f1f1f1;
 }
 
-/* Style the header */
+h2 {
+	font-size:50px;
+}
+
+p{
+	font-family:verdana;
+}
+
 .header {
-  background-color: #f1f1f1;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
+  background-color:;
+ 
 }
 
-/* Style the top navigation bar */
+.header h1 {
+  font-size: 50px;
+}
+
+.header p{
+	font-size:30px;
+}
+
+
 .topnav {
   overflow: hidden;
   background-color: #333;
 }
 
-/* Style the topnav links */
+
 .topnav a {
   float: left;
   display: block;
@@ -36,17 +51,38 @@ body {
   text-decoration: none;
 }
 
-/* Change color on hover */
+
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
 
-/* Create three equal columns that floats next to each other */
-.column {
+
+.leftcolumn {   
   float: left;
-  width: 33.33%;
-  padding: 15px;
+  width: 75%;
+}
+
+
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
 }
 
 /* Clear floats after the columns */
@@ -56,9 +92,17 @@ body {
   clear: both;
 }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width:600px) {
-  .column {
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
     width: 100%;
   }
 }
@@ -67,32 +111,49 @@ body {
 <body>
 
 <div class="header">
-  <h1>Header</h1>
-  <p>Resize the browser window to see the responsive effect.</p>
+  <h1>E P L</h1>
+  <p>England Premier League</p>
 </div>
 
 <div class="topnav">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
+  <a href="https://sports.news.naver.com/wfootball/record/index.nhn?category=epl&year=2018&tab=team" target="_blank">구단순위</a>
+  <a href="https://sports.news.naver.com/wfootball/record/index.nhn?category=epl&year=2018&tab=player" target="_blank">선수순위</a>
+  <a href="https://sports.news.naver.com/wfootball/vod/index.nhn?category=epl" target="_blank">경기 하이라이트</a>
 </div>
 
 <div class="row">
-  <div class="column">
-    <h2>Column</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>EPL?</h2>
+      <img src="image/epl.jpg" alt="epl로고" width="800"height="500">
+      <p>4부로 구성된 잉글랜드의 프로축구 리그 가운데 1부리그를 가리킨다.</p>
+      <p>잉글랜드의 프리미어리그는 20개 소속 클럽이 홈앤드어웨이 방식으로 클럽당 38경기를 치르며,승리하면 3점, 비기면 1점,지면 0점을 주어 총점이 가장 높은 클럽이 우승하게 된다.
+      	보통 8월에 시작해서 다음해 5월까지 열린다.
+      </p>
+      <p>정규시즌이 끝난 후 1부리그 하위 3개 클럽이 2부리그로 떨어지고 2부리그의 상위2개 클럽이 1부리그로 승격한다.
+      	2부리그의 3,4,5,6위 4개 클럽은 플레이오프를 거쳐 승리한 클럽이 1부리그에 승격하게 된다.
+      </p>
+      <p>영국의 프로축구는 잉글랜드 리그,스코틀랜드 리그,웨일즈 리그,북아일랜드 리그로 나뉘며 4개 리그 모두 프리미어리그라나는 명칭을 사용한다.</p>
+
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
   </div>
-  
-  <div class="column">
-    <h2>Column</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-  </div>
-  
-  <div class="column">
-    <h2>Column</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>EPL 최고의선수</h2>
+     <img src="image/son.jpg" alt="손흥민" width="400"height="400">
+      <p>EPL최고의 선수중 한명중 한명인 손흥민은 최근 토트넘에서 18/19 챔피언스리그 준우승에 기여한 일등공신으로
+      활약하고있다.</p>
+    </div>
   </div>
 </div>
+
 
 </body>
 </html>
